@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A27E52E1224AA15900DF0EFF /* TimerPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27E52E0224AA15900DF0EFF /* TimerPopupViewController.swift */; };
+		A28ECEC1224516EC0025718B /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28ECEC0224516EC0025718B /* Recipe.swift */; };
+		A28ECEC322490BC90025718B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28ECEC222490BC80025718B /* Alert.swift */; };
 		A2915A872238F2EB0000FA80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915A862238F2EB0000FA80 /* AppDelegate.swift */; };
-		A2915A892238F2EB0000FA80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915A882238F2EB0000FA80 /* ViewController.swift */; };
 		A2915A8C2238F2EB0000FA80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2915A8A2238F2EB0000FA80 /* Main.storyboard */; };
 		A2915A8E2238F2F00000FA80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2915A8D2238F2F00000FA80 /* Assets.xcassets */; };
 		A2915A912238F2F00000FA80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2915A8F2238F2F00000FA80 /* LaunchScreen.storyboard */; };
+		A2915A99224264730000FA80 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915A98224264730000FA80 /* TimerViewController.swift */; };
+		A2915A9D2242650D0000FA80 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915A9C2242650D0000FA80 /* DetailRecipeViewController.swift */; };
+		A2915A9F224265250000FA80 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915A9E224265250000FA80 /* AddRecipeViewController.swift */; };
+		A2915AA122426D470000FA80 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915AA022426D470000FA80 /* RecipeCell.swift */; };
+		A2915AA7224272F50000FA80 /* MyRecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2915AA6224272F50000FA80 /* MyRecipesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A27E52E0224AA15900DF0EFF /* TimerPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPopupViewController.swift; sourceTree = "<group>"; };
+		A28ECEC0224516EC0025718B /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		A28ECEC222490BC80025718B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		A2915A832238F2EB0000FA80 /* Cookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2915A862238F2EB0000FA80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A2915A882238F2EB0000FA80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A2915A8B2238F2EB0000FA80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2915A8D2238F2F00000FA80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2915A902238F2F00000FA80 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A2915A922238F2F00000FA80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2915A98224264730000FA80 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		A2915A9C2242650D0000FA80 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
+		A2915A9E224265250000FA80 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
+		A2915AA022426D470000FA80 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		A2915AA6224272F50000FA80 /* MyRecipesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipesViewController.swift; sourceTree = "<group>"; };
+		A2AEC2A4224BBF7A008ED815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +69,18 @@
 			isa = PBXGroup;
 			children = (
 				A2915A862238F2EB0000FA80 /* AppDelegate.swift */,
-				A2915A882238F2EB0000FA80 /* ViewController.swift */,
+				A2915AA022426D470000FA80 /* RecipeCell.swift */,
+				A28ECEC222490BC80025718B /* Alert.swift */,
+				A27E52E0224AA15900DF0EFF /* TimerPopupViewController.swift */,
+				A2915AA6224272F50000FA80 /* MyRecipesViewController.swift */,
+				A28ECEC0224516EC0025718B /* Recipe.swift */,
+				A2915A98224264730000FA80 /* TimerViewController.swift */,
+				A2915A9E224265250000FA80 /* AddRecipeViewController.swift */,
+				A2915A9C2242650D0000FA80 /* DetailRecipeViewController.swift */,
 				A2915A8A2238F2EB0000FA80 /* Main.storyboard */,
 				A2915A8D2238F2F00000FA80 /* Assets.xcassets */,
 				A2915A8F2238F2F00000FA80 /* LaunchScreen.storyboard */,
-				A2915A922238F2F00000FA80 /* Info.plist */,
+				A2AEC2A4224BBF7A008ED815 /* Info.plist */,
 			);
 			path = Cookbook;
 			sourceTree = "<group>";
@@ -135,7 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2915A892238F2EB0000FA80 /* ViewController.swift in Sources */,
+				A2915A9F224265250000FA80 /* AddRecipeViewController.swift in Sources */,
+				A27E52E1224AA15900DF0EFF /* TimerPopupViewController.swift in Sources */,
+				A2915A9D2242650D0000FA80 /* DetailRecipeViewController.swift in Sources */,
+				A28ECEC1224516EC0025718B /* Recipe.swift in Sources */,
+				A2915A99224264730000FA80 /* TimerViewController.swift in Sources */,
+				A2915AA7224272F50000FA80 /* MyRecipesViewController.swift in Sources */,
+				A2915AA122426D470000FA80 /* RecipeCell.swift in Sources */,
+				A28ECEC322490BC90025718B /* Alert.swift in Sources */,
 				A2915A872238F2EB0000FA80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
