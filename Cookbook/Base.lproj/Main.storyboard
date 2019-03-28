@@ -178,7 +178,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rwb-65-B07">
-                                        <rect key="frame" x="33.5" y="32" width="308" height="200"/>
+                                        <rect key="frame" x="33.5" y="16" width="308" height="200"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="SEf-Iz-RcI">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -209,13 +209,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="246" verticalHuggingPriority="246" text="Recipe goes here" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-Tm-e5e">
-                                        <rect key="frame" x="16" y="298" width="343" height="20.5"/>
+                                        <rect key="frame" x="16" y="282" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPf-lf-gof">
-                                        <rect key="frame" x="187" y="248" width="70" height="34"/>
+                                        <rect key="frame" x="203" y="232" width="70" height="34"/>
                                         <color key="backgroundColor" red="0.95915448670000003" green="0.95915448670000003" blue="0.95915448670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="R8j-c3-05b"/>
@@ -230,13 +230,13 @@
                                         </connections>
                                     </button>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" text="Recipe goes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WIJ-Rs-u4O">
-                                        <rect key="frame" x="16" y="298" width="343" height="28.5"/>
+                                        <rect key="frame" x="16" y="282" width="343" height="20.5"/>
                                         <color key="backgroundColor" red="0.95915448670000003" green="0.95915448670000003" blue="0.95915448670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1p4-UT-oYo">
-                                        <rect key="frame" x="273" y="248" width="70" height="34"/>
+                                        <rect key="frame" x="289" y="232" width="70" height="34"/>
                                         <color key="backgroundColor" red="0.95915448670000003" green="0.95915448670000003" blue="0.95915448670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.93366831539999995" green="0.35684871670000001" blue="0.32546371219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Delete">
@@ -247,24 +247,41 @@
                                             <action selector="deleteButtonPressed:" destination="ev2-kX-dwI" eventType="touchUpInside" id="0Gu-3G-cGr"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hme-kY-PKK">
+                                        <rect key="frame" x="17" y="239" width="46.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8t2-dq-UDU">
+                                        <rect key="frame" x="16" y="234" width="171" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="WPf-lf-gof" firstAttribute="leading" secondItem="8t2-dq-UDU" secondAttribute="trailing" constant="16" id="0Gz-2Z-ZQH"/>
                                     <constraint firstItem="DEd-Tm-e5e" firstAttribute="leading" secondItem="URe-2a-CB7" secondAttribute="leading" constant="16" id="4Vv-W6-lkF"/>
                                     <constraint firstItem="WPf-lf-gof" firstAttribute="width" secondItem="1p4-UT-oYo" secondAttribute="width" id="5fp-46-Dby"/>
                                     <constraint firstItem="WIJ-Rs-u4O" firstAttribute="top" secondItem="WPf-lf-gof" secondAttribute="bottom" constant="16" id="6KH-Mz-UTS"/>
-                                    <constraint firstItem="rwb-65-B07" firstAttribute="top" secondItem="URe-2a-CB7" secondAttribute="top" constant="32" id="6gQ-Mv-get"/>
+                                    <constraint firstItem="rwb-65-B07" firstAttribute="top" secondItem="URe-2a-CB7" secondAttribute="top" constant="16" id="6gQ-Mv-get"/>
                                     <constraint firstItem="DEd-Tm-e5e" firstAttribute="top" secondItem="WPf-lf-gof" secondAttribute="bottom" constant="16" id="BKm-Rh-XhB"/>
+                                    <constraint firstItem="Hme-kY-PKK" firstAttribute="top" secondItem="rwb-65-B07" secondAttribute="bottom" constant="23" id="Nct-nD-K7O"/>
+                                    <constraint firstItem="Hme-kY-PKK" firstAttribute="leading" secondItem="URe-2a-CB7" secondAttribute="leading" constant="17" id="R3V-rl-StK"/>
                                     <constraint firstItem="1p4-UT-oYo" firstAttribute="top" secondItem="rwb-65-B07" secondAttribute="bottom" constant="16" id="TEz-re-cSf"/>
                                     <constraint firstItem="DEd-Tm-e5e" firstAttribute="centerX" secondItem="URe-2a-CB7" secondAttribute="centerX" id="UBE-D1-hdh"/>
                                     <constraint firstAttribute="trailing" secondItem="WIJ-Rs-u4O" secondAttribute="trailing" constant="16" id="Wfj-c6-rIV"/>
                                     <constraint firstItem="WPf-lf-gof" firstAttribute="top" secondItem="rwb-65-B07" secondAttribute="bottom" constant="16" id="XFu-ku-3Lb"/>
-                                    <constraint firstAttribute="bottom" secondItem="DEd-Tm-e5e" secondAttribute="bottom" constant="16" id="bx5-EY-XFU"/>
+                                    <constraint firstAttribute="bottom" secondItem="DEd-Tm-e5e" secondAttribute="bottom" constant="8" id="bx5-EY-XFU"/>
                                     <constraint firstAttribute="bottom" secondItem="WIJ-Rs-u4O" secondAttribute="bottom" constant="8" id="cBz-5u-z8H"/>
                                     <constraint firstItem="WPf-lf-gof" firstAttribute="height" secondItem="1p4-UT-oYo" secondAttribute="height" id="ccY-MD-955"/>
                                     <constraint firstItem="rwb-65-B07" firstAttribute="centerX" secondItem="URe-2a-CB7" secondAttribute="centerX" id="co7-KY-Pg9"/>
+                                    <constraint firstItem="8t2-dq-UDU" firstAttribute="leading" secondItem="URe-2a-CB7" secondAttribute="leading" constant="16" id="ktF-Xm-hSk"/>
                                     <constraint firstAttribute="trailing" secondItem="DEd-Tm-e5e" secondAttribute="trailing" constant="16" id="rXg-md-y9h"/>
-                                    <constraint firstAttribute="trailing" secondItem="1p4-UT-oYo" secondAttribute="trailing" constant="32" id="sua-ia-S5g"/>
+                                    <constraint firstAttribute="trailing" secondItem="1p4-UT-oYo" secondAttribute="trailing" constant="16" id="sua-ia-S5g"/>
                                     <constraint firstItem="1p4-UT-oYo" firstAttribute="leading" secondItem="WPf-lf-gof" secondAttribute="trailing" constant="16" id="tp1-ux-JUw"/>
+                                    <constraint firstItem="8t2-dq-UDU" firstAttribute="top" secondItem="rwb-65-B07" secondAttribute="bottom" constant="18" id="vCY-ch-DRY"/>
                                     <constraint firstItem="WIJ-Rs-u4O" firstAttribute="leading" secondItem="URe-2a-CB7" secondAttribute="leading" constant="16" id="wuT-bm-cGJ"/>
                                 </constraints>
                             </scrollView>
@@ -287,12 +304,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bottomConstraint" destination="cBz-5u-z8H" id="zDu-hH-9gm"/>
                         <outlet property="editButton" destination="WPf-lf-gof" id="mTX-G9-wZS"/>
                         <outlet property="editTextView" destination="WIJ-Rs-u4O" id="dVQ-qW-S8Q"/>
                         <outlet property="imageView1" destination="SEf-Iz-RcI" id="N6z-OB-rGG"/>
                         <outlet property="imageView2" destination="Acb-Px-smE" id="9ua-40-i8a"/>
                         <outlet property="imageView3" destination="aCk-vf-GXY" id="Czp-xd-Gae"/>
                         <outlet property="recipeLabel" destination="DEd-Tm-e5e" id="9bU-QL-jsb"/>
+                        <outlet property="recipeNameLabel" destination="Hme-kY-PKK" id="Wim-jw-EdB"/>
+                        <outlet property="recipeNameTextField" destination="8t2-dq-UDU" id="40y-bx-eBl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99u-NI-Wdw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -568,6 +588,7 @@
                     </view>
                     <connections>
                         <outlet property="addRecipeButton" destination="i6B-Iv-Y4T" id="Hji-pW-XDK"/>
+                        <outlet property="bottomConstraint" destination="HdY-FE-2Xm" id="3Qb-Mt-6h3"/>
                         <outlet property="imageView" destination="Exr-Pz-jXK" id="WCP-qk-Xbe"/>
                         <outlet property="recipeNameTextField" destination="7Ao-Xr-t4O" id="JKv-M2-L28"/>
                         <outlet property="recipeTextView" destination="8h0-OO-nTB" id="vUZ-g5-KDq"/>

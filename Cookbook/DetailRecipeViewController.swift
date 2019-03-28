@@ -21,6 +21,9 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var recipeLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editTextView: UITextView!
+    @IBOutlet weak var recipeNameLabel: UILabel!
+    @IBOutlet weak var recipeNameTextField: UITextField!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     var selectedRecipe: Recipe!
     var selectedRecipeIndex: Int!
@@ -32,6 +35,7 @@ class DetailRecipeViewController: UIViewController {
         
         editTextView.isScrollEnabled = false
         navigationItem.title = selectedRecipe.name
+        recipeNameLabel.text = selectedRecipe.name
         // recipeLabel.attributedText = detectTimeInRecipe()
         recipeLabel.text = selectedRecipe.recipe
         imageView2.isHidden = true
@@ -50,6 +54,22 @@ class DetailRecipeViewController: UIViewController {
             }
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        self.bottomConstraint.constant = keyboardFrame.size.height + 8
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.bottomConstraint.constant = 8
     }
     
     // MARK: - Button actions
@@ -60,15 +80,24 @@ class DetailRecipeViewController: UIViewController {
         if !isEditingRecipe {
             isEditingRecipe = true
             recipeLabel.isHidden = true
+            recipeNameLabel.isHidden = true
             editTextView.isHidden = false
+            recipeNameTextField.isHidden = false
             editTextView.text = selectedRecipe.recipe
+            recipeNameTextField.text = selectedRecipe.name
             editButton.setTitle("Save", for: .normal)
         } else {
+            self.view.endEditing(true)
             isEditingRecipe = false
             selectedRecipe.recipe = editTextView.text
+            selectedRecipe.name = recipeNameTextField.text!
             editTextView.isHidden = true
+            recipeNameTextField.isHidden = true
             recipeLabel.isHidden = false
+            recipeNameLabel.isHidden = false
             recipeLabel.text = selectedRecipe.recipe
+            recipeNameLabel.text = selectedRecipe.name
+            navigationItem.title = selectedRecipe.name
             editButton.setTitle("Edit", for: .normal)
             editRecipeDelegate?.saveRecipeEdit()
         }

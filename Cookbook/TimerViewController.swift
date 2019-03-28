@@ -143,10 +143,10 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             cancelTimer()
             Alert.showBasicOkAlert(on: self, with: "Timer is up!", message: "Time for the next step!")
             AudioServicesPlayAlertSound(SystemSoundID(1005))
-            self.tabBarController?.tabBar.items![1].badgeColor = .green
+            self.tabBarController?.tabBar.items![1].badgeColor = #colorLiteral(red: 0.2277980745, green: 0.3083587885, blue: 0.2540222406, alpha: 1)
             showTabBarNotification(text: "Timer up!")
         } else if seconds<12 {
-            self.tabBarController?.tabBar.items![1].badgeColor = .red
+            self.tabBarController?.tabBar.items![1].badgeColor = #colorLiteral(red: 0.9336683154, green: 0.3568487167, blue: 0.3254637122, alpha: 1)
             seconds -= 1
             timerLabel.text = timeForTimerString(time: TimeInterval(seconds))
             showTabBarNotification(text: "\(seconds)")

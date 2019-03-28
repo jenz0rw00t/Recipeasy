@@ -18,6 +18,7 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var recipeNameTextField: UITextField!
     @IBOutlet weak var recipeTextView: UITextView!
     @IBOutlet weak var addRecipeButton: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     weak var addRecipeDelegate: AddRecipeDelegate?
     
@@ -32,10 +33,29 @@ class AddRecipeViewController: UIViewController, UINavigationControllerDelegate,
         recipeTextView.text = "Paste in recipe here or type in manually..."
         recipeTextView.textColor = UIColor.lightGray
         
+        recipeNameTextField.becomeFirstResponder()
+        
         tapRecognizer.addTarget(self, action: #selector(AddRecipeViewController.tappedImage))
+        
         imageView.addGestureRecognizer(tapRecognizer)
         imageView.isUserInteractionEnabled = true
-        
+ 
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWasShown(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        self.bottomConstraint.constant = keyboardFrame.size.height + 8
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        self.bottomConstraint.constant = 8
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
