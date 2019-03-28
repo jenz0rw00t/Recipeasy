@@ -33,6 +33,8 @@ class DetailRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Multiple images and also the ability to add, delete and change images
+        
         editTextView.isScrollEnabled = false
         navigationItem.title = selectedRecipe.name
         recipeNameLabel.text = selectedRecipe.name
@@ -131,7 +133,7 @@ class DetailRecipeViewController: UIViewController {
         }
     }
     
-    /*
+    /*  TEST CODE TO TRY AND FIND ALL NUMBERS AND MAKE THEM TAPABLE DID NOT WORK :(
     func detectTimeInRecipe() -> NSAttributedString {
         let textWithLinks = NSMutableAttributedString()
         var textComponents = selectedRecipe.recipe.components(separatedBy: " ")

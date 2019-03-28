@@ -35,10 +35,10 @@
                                 <color key="barTintColor" red="0.94245225190000004" green="0.7142567635" blue="0.49683076139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tabBar>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQY-q4-v2f">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <rect key="frame" x="0.0" y="-30" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.94245225190000004" green="0.7142567635" blue="0.49683076139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="oER-f5-aWc"/>
+                                    <constraint firstAttribute="height" constant="50" id="oER-f5-aWc"/>
                                 </constraints>
                             </view>
                         </subviews>
