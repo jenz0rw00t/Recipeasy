@@ -67,6 +67,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 timer.invalidate()
                 isTimerPaused = true
                 startPauseButton.setTitle("Resume", for: UIControl.State.normal)
+                clearSavedTimer()
             } else {
                 startSendTimerNotification(sec: seconds)
                 runTimer()
@@ -113,7 +114,7 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @objc func stopTimerWhenAppEntersBackground() {
-        if isTimerRunning {
+        if isTimerRunning && !isTimerPaused {
             timer.invalidate()
             let pausDate = NSDate()
             UserDefaults.standard.set(pausDate, forKey: "saveDate")
@@ -121,16 +122,18 @@ class TimerViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     @objc func startTimerComingFromBackground(){
-        guard let savedPauseDate = UserDefaults.standard.object(forKey: "saveDate") as? Date else {
-            return
-        }
-        let difference = savedPauseDate.timeIntervalSinceNow
-        seconds += Int(difference)
-        if seconds>1 {
-            timerLabel.text = timeForTimerString(time: TimeInterval(seconds))
-            runTimer()
-        } else {
-            cancelTimer()
+        if isTimerRunning && !isTimerPaused {
+            guard let savedPauseDate = UserDefaults.standard.object(forKey: "saveDate") as? Date else {
+                return
+            }
+            let difference = savedPauseDate.timeIntervalSinceNow
+            seconds += Int(difference)
+            if seconds>1 {
+                timerLabel.text = timeForTimerString(time: TimeInterval(seconds))
+                runTimer()
+            } else {
+                cancelTimer()
+            }
         }
     }
     
