@@ -112,10 +112,10 @@ class DetailRecipeViewController: UIViewController {
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
         let alert = UIAlertController(title: "Do you want to delete this recipe?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Delete", style: .cancel, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
             self.deleteRecipe()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true)
     }
     
